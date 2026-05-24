@@ -1,10 +1,11 @@
+import os
 from flask import Flask, request
 import requests
 
 app = Flask(__name__)
 
-TOKEN   = "8872290494:AAHZQbhkHmj2sjWQhVYUT7KIQscJj4_N3hQ"
-CHAT_ID = "409161866"
+TOKEN   = os.environ.get("TELEGRAM_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def send(msg):
     url = "https://api.telegram.org/bot" + TOKEN + "/sendMessage"
