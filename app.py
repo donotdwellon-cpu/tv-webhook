@@ -14,9 +14,12 @@ def send(msg):
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    msg = request.data.decode("utf-8")
-    print("받은 메시지:", msg)
-    send(msg)
+    msg = request.get_data(as_text=True)
+    if not msg:
+        msg = request.form.get("text", "")
+    print("받은 메시지:", repr(msg))
+    if msg:
+        send(msg)
     return "ok", 200
 
 @app.route("/")
