@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-TOKEN   = "8872290494:AAFuyizmXfJHpq5af3hyMQSQqJIJagTiW5k"
+TOKEN   = "8872290494:AAHZQbhkHmj2sjWQhVYUT7KIQscJj4_N3hQ"
 CHAT_ID = "409161866"
 
 def send(msg):
